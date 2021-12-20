@@ -1,0 +1,13 @@
+﻿width=18
+height=10
+sanityLoseChance=3
+startSanity=10
+roomAmount=3
+-------Rooms--------
+useDungeon=false
+useLivingRoom=true
+-------Debugs----------
+AnimationDebug=false
+ColoredFlooringDebug=true
+DisableFOWDebug=true
+NoClipDebug=true

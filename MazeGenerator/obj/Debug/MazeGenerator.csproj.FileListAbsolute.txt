@@ -1,0 +1,11 @@
+C:\Users\Melon\source\repos\MazeGenerator\MazeGenerator\bin\Debug\Settings.txt
+C:\Users\Melon\source\repos\MazeGenerator\MazeGenerator\bin\Debug\MazeGenerator.exe.config
+C:\Users\Melon\source\repos\MazeGenerator\MazeGenerator\bin\Debug\MazeGenerator.exe
+C:\Users\Melon\source\repos\MazeGenerator\MazeGenerator\bin\Debug\MazeGenerator.pdb
+C:\Users\Melon\source\repos\MazeGenerator\MazeGenerator\obj\Debug\MazeGenerator.csprojAssemblyReference.cache
+C:\Users\Melon\source\repos\MazeGenerator\MazeGenerator\obj\Debug\MazeGenerator.Form1.resources
+C:\Users\Melon\source\repos\MazeGenerator\MazeGenerator\obj\Debug\MazeGenerator.Properties.Resources.resources
+C:\Users\Melon\source\repos\MazeGenerator\MazeGenerator\obj\Debug\MazeGenerator.csproj.GenerateResource.cache
+C:\Users\Melon\source\repos\MazeGenerator\MazeGenerator\obj\Debug\MazeGenerator.csproj.CoreCompileInputs.cache
+C:\Users\Melon\source\repos\MazeGenerator\MazeGenerator\obj\Debug\MazeGenerator.exe
+C:\Users\Melon\source\repos\MazeGenerator\MazeGenerator\obj\Debug\MazeGenerator.pdb
