@@ -11,3 +11,5 @@ AnimationDebug=false
 ColoredFlooringDebug=true
 DisableFOWDebug=true
 NoClipDebug=true
+DisableWalkingSanityDrain=true
+DisableAllSanityDrain=false

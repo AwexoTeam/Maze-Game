@@ -52,6 +52,7 @@
     <Compile Include="Code\Defination\Cell.cs" />
     <Compile Include="Code\Defination\CellSide.cs" />
     <Compile Include="Code\Defination\Direction.cs" />
+    <Compile Include="Code\Defination\GameState.cs" />
     <Compile Include="Code\Defination\Key.cs" />
     <Compile Include="Code\Defination\MazeArgs.cs" />
     <Compile Include="Code\Defination\RoomType.cs" />

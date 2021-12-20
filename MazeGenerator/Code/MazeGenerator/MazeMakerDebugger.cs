@@ -14,6 +14,7 @@ public enum DebugFeatures
     NoClip,
     DisableWalkingSanityDrain,
     DisableAllSanityDrain,
+    VerboseDebug,
 }
 
 public static class MazeMakerDebugger
@@ -25,7 +26,10 @@ public static class MazeMakerDebugger
     public static bool isNoClipOn;
     public static bool isDisableWalkingSanityDrainOn;
     public static bool isDisableSanityDrainOn;
+    public static bool isVerboseDebugOn;
 
+    //Couldnt get bitswifting to work
+    //TODO: fix bit shifting
     public static void SetFeature(DebugFeatures feature)
     {
         switch (feature)
@@ -48,6 +52,8 @@ public static class MazeMakerDebugger
             case DebugFeatures.DisableAllSanityDrain:
                 isDisableSanityDrainOn = !isDisableSanityDrainOn;
                 break;
+            case DebugFeatures.VerboseDebug:
+                isVerboseDebugOn = !isVerboseDebugOn;
             default:
                 break;
         }
@@ -76,6 +82,9 @@ public static class MazeMakerDebugger
 
             case DebugFeatures.DisableAllSanityDrain:
                 return isDisableSanityDrainOn;
+
+            case DebugFeatures.VerboseDebug:
+                return isVerboseDebugOn;
         }
 
         return FlagsHelper.IsSet<DebugFeatures>(features, feature);

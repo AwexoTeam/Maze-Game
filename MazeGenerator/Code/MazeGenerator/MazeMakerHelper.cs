@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 public static class MazeMakerHelper
 {
+    //I really wanted there to be a smart way of doing this.
+    //I couldnt find one so hard coded it is :/
     public static Direction GetOppsiteDirection(Direction dir)
     {
         if (dir == Direction.North)
@@ -38,20 +40,18 @@ public static class MazeMakerHelper
         return rtn;
     }
 
-    public static Cell GetCellByCoordinate(List<Cell> maze, int x, int y)
-    {
-        return GetCellByCoordinate(maze, new Point(x, y));
-    }
-
     public static Cell GetCellByCoordinate(List<Cell> maze, Point chk)
     {
         Cell rtn = maze.Find(c => c.indexCoords == chk);
-        //if(rtn == null)
-        //    Console.WriteLine("Tried to get value at: " + chk);
+
+        bool isVerbose = MazeMakerDebugger.HasFeature(DebugFeatures.VerboseDebug);
+        if(rtn == null && isVerbose)
+            Console.WriteLine("Tried to get value at: " + chk);
 
         return rtn;
     }
 
+    //Again i wanted this to be coded well but for now its hardcoded.
     public static Cell GetCellInDirection(List<Cell> maze, Cell start, Direction dir)
     {
         Point p = start.indexCoords;
@@ -82,6 +82,8 @@ public static class MazeMakerHelper
 
     public static Direction GetDirectionBetweenTwoCells(Cell a, Cell b)
     {
+        //TODO: included vector math to make really cool longer stretches.
+
         int x = b.indexCoords.X - a.indexCoords.X;
         int y = b.indexCoords.Y - a.indexCoords.Y;
 
@@ -100,6 +102,10 @@ public static class MazeMakerHelper
 
     public static void UpdateCellInfo(ref Cell cell)
     {
+        //Hard to explain over code comments.
+        //Ask me about how we define each rooms in the updatecell info.
+        //Keep in mind the index of the sides relates the direction enum's index too :) (eg. north = 0, east = 1...)
+
         bool[] w = new bool[]
         {
             cell.sides[0].isWall,
@@ -172,12 +178,16 @@ public static class MazeMakerHelper
             Console.WriteLine("We got a weird one at: " + cell.indexCoords);
     }
 
+    /// <param name="maze">A reference to the maze we run this on.</param>
+    /// <param name="start">The start cell</param>
+    /// <param name="dir">The direction to look in</param>
+    /// <param name="end">This get out which is the cell at the end of the corridor</param>
+    /// <returns>The list of cooridors between start and end</returns>
     public static List<Cell> GetCellByEndOfCooridor(List<Cell> maze, Cell start, Direction dir, out Cell end)
     {
         List<Cell> rtn = new List<Cell>();
         end = GetCellInDirection(maze, start, dir);
         RoomType type = end.type;
-
 
         if(end.type == RoomType.Corridor)
         {
